@@ -30,3 +30,22 @@ function calcAge(birthyear) {
 const firstName = 'Damian';
 
 calcAge(1996);
+
+const myName = 'jonas';
+
+//Temporal dead zone error message/ also called tdz example. trying to log
+// the variable job before defining it
+// if (myName === 'jonas') {
+//   console.log(`jonas is a ${job}`); //ReferenceError: Cannot access 'job' before initialization
+//   const age = 2037 - 1980;
+//   const job = 'teacher';
+//   console.log(age);
+//   console.log(x);
+// }
+
+console.log(me);
+console.log(job);
+console.log(year);
+var me = 'Jonas';
+let job = 'teacher';
+const year = 1991;
