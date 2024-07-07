@@ -54,35 +54,93 @@ const year = 1991;
 // Functions
 // console.log(addExpr(2, 3));
 
-function addDecl(a, b) {
-  return a + b;
-}
+// function addDecl(a, b) {
+//   return a + b;
+// }
 
-const addExpr = function (a, b) {
-  return a + b;
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = (a, b) => a + b;
+
+// // console.log(this);
+
+// const calcAge = function (birthyear) {
+//   console.log(2037 - birthyear);
+//   console.log(this);
+// };
+
+// const calcAgeArrow = birthyear => {
+//   console.log(2037 - birthyear);
+//   console.log(this);
+// };
+
+// calcAge(1990);
+// calcAgeArrow(1980);
+
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     self = this;
+//     const isMillenialTwo = function () {
+//       //Här sätter vi self med ett värde av this innan för objektet. Functionen letar efter self som är this
+//       //Ovanför i scope området
+//       console.log(self.year >= 1981 && self.year <= 1996);
+//     };
+
+//     const isMillenial = function () {
+//       // Resultatet blir undefined eftersom detta är en vanlig funktions anrop.
+//       //Skulle vi sätta anropen utanför jonas objektet skulle vi få samma resultat.
+//       // Däremot så kan vi komma runt detta genom att använda self eller that variabeln som vi sätter innanför objektet.
+
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+
+//     const isMillenialArrow = () => {
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenialArrow();
+//     isMillenialTwo();
+//     isMillenial();
+//   },
+//   greet: () => {
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+// // jonas.greet();
+// jonas.calcAge();
+
+//Primitive types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
 };
 
-const addArrow = (a, b) => a + b;
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica);
 
-// console.log(this);
+// marriedJessica = {};
 
-const calcAge = function (birthyear) {
-  console.log(2037 - birthyear);
-  console.log(this);
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
 };
 
-const calcAgeArrow = birthyear => {
-  console.log(2037 - birthyear);
-  console.log(this);
-};
-
-calcAge(1990);
-calcAgeArrow(1980);
-
-const jonas = {
-  year: 1991,
-  calcAge: function () {
-    console.log(this);
-  },
-};
-jonas.calcAge();
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davis';
+jessica2.family.push('Alex', 'Adam');
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
